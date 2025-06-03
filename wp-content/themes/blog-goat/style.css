@@ -14,6 +14,8 @@ Tags: responsivo, blog, ecommerce, moderno, customizado
 @import url(./css/footer.css);
 @import url(./css/header.css);
 @import url(./css/home.css);
+@import url(./css/single.css);
+@import url(./css/category.css);
 
 
 /* ================================================
@@ -99,4 +101,9 @@ Tags: responsivo, blog, ecommerce, moderno, customizado
 .nav_bar ul li,
 .nav_bar ul.sub-menu {
   list-style: none;
+}
+
+article > a {
+  text-decoration: none;
+  color: var(--color-black);
 }

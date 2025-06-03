@@ -78,86 +78,52 @@
         </div>
 
         <section class="ultimos_posts">
-            <!-- Cada post é um article -->
-            <article class="post">
-                <figure class="img_post">
-                    <span class="categoria">Destination</span>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post2.png" alt="Imagem da postagem 1">
-                </figure>
-                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
-                <div class="tempo_post">
-                    <time datetime="2025-05-26"><i class="fa-solid fa-calendar"></i> 26 de maio, 2025</time>
-                    <span><i class="fa-solid fa-clock"></i> 20 minutos</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit optio...</p>
-            </article>
+    <?php
+    $args = [
+        'post_type'      => 'post',
+        'posts_per_page' => 6,
+        'post_status'    => 'publish'
+    ];
 
-            <!-- Repetição dos outros posts -->
-            <article class="post">
-                <figure class="img_post">
-                    <span class="categoria">Destination</span>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post1.png" alt="Imagem da postagem 2">
-                </figure>
-                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
-                <div class="tempo_post">
-                    <time datetime="2025-05-26"><i class="fa-solid fa-calendar"></i> 26 de maio, 2025</time>
-                    <span><i class="fa-solid fa-clock"></i> 20 minutos</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit optio...</p>
-            </article>
+    $query = new WP_Query($args);
 
-            <article class="post">
+    if ($query->have_posts()):
+        while ($query->have_posts()): $query->the_post();
+            $categoria = get_the_category();
+            $categoria_nome = !empty($categoria) ? $categoria[0]->name : '';
+            $data_formatada = get_the_date('d \d\e F, Y');
+            $imagem = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+    ?>
+        <article class="post">
+            <a href="<?php the_permalink(); ?>" aria-label="<?php the_title_attribute(); ?>">
                 <figure class="img_post">
-                    <span class="categoria">Destination</span>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post1.png" alt="Imagem da postagem 3">
+                    <?php if ($categoria_nome): ?>
+                        <span class="categoria"><?php echo esc_html($categoria_nome); ?></span>
+                    <?php endif; ?>
+                    <img src="<?php echo esc_url($imagem); ?>" alt="<?php the_title_attribute(); ?>">
                 </figure>
-                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
-                <div class="tempo_post">
-                    <time datetime="2025-05-26"><i class="fa-solid fa-calendar"></i> 26 de maio, 2025</time>
-                    <span><i class="fa-solid fa-clock"></i> 20 minutos</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit optio...</p>
-            </article>
 
-            <article class="post">
-                <figure class="img_post">
-                    <span class="categoria">Destination</span>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post2.png" alt="Imagem da postagem 4">
-                </figure>
-                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
-                <div class="tempo_post">
-                    <time datetime="2025-05-26"><i class="fa-solid fa-calendar"></i> 26 de maio, 2025</time>
-                    <span><i class="fa-solid fa-clock"></i> 20 minutos</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit optio...</p>
-            </article>
+                <h3><?php the_title(); ?></h3>
 
-            <article class="post">
-                <figure class="img_post">
-                    <span class="categoria">Destination</span>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post2.png" alt="Imagem da postagem 4">
-                </figure>
-                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
                 <div class="tempo_post">
-                    <time datetime="2025-05-26"><i class="fa-solid fa-calendar"></i> 26 de maio, 2025</time>
+                    <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                        <i class="fa-solid fa-calendar"></i> <?php echo esc_html($data_formatada); ?>
+                    </time>
                     <span><i class="fa-solid fa-clock"></i> 20 minutos</span>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit optio...</p>
-            </article>
 
-            <article class="post">
-                <figure class="img_post">
-                    <span class="categoria">Destination</span>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post2.png" alt="Imagem da postagem 4">
-                </figure>
-                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
-                <div class="tempo_post">
-                    <time datetime="2025-05-26"><i class="fa-solid fa-calendar"></i> 26 de maio, 2025</time>
-                    <span><i class="fa-solid fa-clock"></i> 20 minutos</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit optio...</p>
-            </article>
-        </section>
+                <p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
+            </a>
+        </article>
+    <?php
+        endwhile;
+        wp_reset_postdata();
+    else:
+        echo '<p>Nenhuma postagem encontrada.</p>';
+    endif;
+    ?>
+</section>
+
     </section>
 
     <?php

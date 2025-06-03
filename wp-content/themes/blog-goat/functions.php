@@ -17,3 +17,17 @@ add_filter('use_block_editor_for_post_type', function($use_block_editor, $post_t
 
 
 add_theme_support('title-tag');
+add_theme_support('post-thumbnails');
+
+add_filter('body_class', function($classes) {
+    if (is_single()) {
+        $classes[] = 'is-single-post';
+    }
+    return $classes;
+});
+
+function estimated_reading_time($content) {
+  $words = str_word_count(strip_tags($content));
+  $minutes = ceil($words / 200); // 200 palavras por minuto
+  return $minutes . ' min';
+}
