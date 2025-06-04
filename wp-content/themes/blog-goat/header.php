@@ -21,7 +21,6 @@
 
 
 <body>
-
 <!-- Cabeçalho principal do site -->
 <header class="header_nav_bar wrapper_padding">
   <div class="img_logo_header">
@@ -52,3 +51,4 @@
   <!-- Overlay para fundo escuro no mobile -->
   <div class="menu-overlay" id="menu-overlay"></div>
 </header>
+

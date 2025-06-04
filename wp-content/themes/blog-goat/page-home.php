@@ -57,7 +57,7 @@
     <section class="container_posts" aria-labelledby="titulo-ultimas-postagens">
         <div class="ultimos_posts_container">
             <h2 id="titulo-ultimas-postagens">Últimas Postagens</h2>
-            <a href="#" class="ver-todos">VER TODOS <i class="fa-regular fa-share-from-square"></i></a>
+            <a href="<?php echo home_url('/arquivo'); ?>" class="ver-todos">VER TODOS <i class="fa-regular fa-share-from-square"></i></a>
         </div>
 
         <section class="ultimos_posts">

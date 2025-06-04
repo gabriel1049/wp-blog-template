@@ -1,0 +1,26 @@
+.titulo_categoria {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 50px 0 20px;
+  color: var(--color-black);
+  border-left: 5px solid var(--color-blue);
+  padding-left: 15px;
+}
+
+.archive_posts_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.category_post_card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.category_post_card:hover {
+  transform: translateY(-5px);
+}

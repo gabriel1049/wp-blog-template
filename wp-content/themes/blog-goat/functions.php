@@ -35,3 +35,4 @@ function carregar_scripts_hero() {
   wp_enqueue_script('hero-slider', get_stylesheet_directory_uri() . '/js/hero-slider.js', [], null, true);
 }
 add_action('wp_enqueue_scripts', 'carregar_scripts_hero');
+

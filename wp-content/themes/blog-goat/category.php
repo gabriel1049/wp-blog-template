@@ -1,3 +1,6 @@
+<?php 
+// Template Name: Categoria de Post
+?>
 <?php get_header(); ?>
 
 <main class="category_page_container wrapper_margin">

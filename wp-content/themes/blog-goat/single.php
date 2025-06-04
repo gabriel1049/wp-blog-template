@@ -1,3 +1,6 @@
+<?php 
+// Template Name: Pagina de post
+?>
 <?php get_header(); ?>
 
 <main class="post_page_container wrapper_margin">

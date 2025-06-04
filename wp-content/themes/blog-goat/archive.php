@@ -1,3 +1,6 @@
+<?php 
+// Template Name: Arquivo de Posts
+?>
 <?php get_header(); ?>
 
 <main class="archive_page_container wrapper_margin">
@@ -6,17 +9,33 @@
     <!-- Breadcrumb -->
     <?php include get_template_directory() . '/components/breadcrumb.php'; ?>
 
-    <!-- Título e descrição do arquivo -->
+    <!-- Título geral -->
     <header class="archive_header">
-      <h1 class="archive_title"><?php the_archive_title(); ?></h1>
-      <?php if (get_the_archive_description()) : ?>
-        <p class="archive_description"><?php echo get_the_archive_description(); ?></p>
-      <?php endif; ?>
+      <h1 class="archive_title">Todas as Categorias</h1>
     </header>
 
-    <!-- Listagem de posts -->
-    <section class="archive_posts_grid">
-      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <!-- Loop por categorias -->
+    <?php
+    $categories = get_categories([
+      'orderby' => 'name',
+      'order'   => 'ASC',
+      'hide_empty' => true
+    ]);
+
+    foreach ($categories as $category) :
+      $cat_query = new WP_Query([
+        'post_type' => 'post',
+        'posts_per_page' => 6,
+        'cat' => $category->term_id
+      ]);
+
+      if ($cat_query->have_posts()) :
+    ?>
+    <section class="categoria_bloco">
+      <h2 class="titulo_categoria"><?php echo esc_html($category->name); ?></h2>
+
+      <div class="archive_posts_grid">
+        <?php while ($cat_query->have_posts()) : $cat_query->the_post(); ?>
         <article class="category_post_card">
           <a href="<?php the_permalink(); ?>" class="category_post_link">
             <figure class="category_post_image">
@@ -25,13 +44,7 @@
               <?php else : ?>
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/no-image.jpg" alt="Sem imagem">
               <?php endif; ?>
-
-              <?php
-              $cat = get_the_category();
-              if ($cat) {
-                echo '<span class="post_category_badge">' . esc_html($cat[0]->name) . '</span>';
-              }
-              ?>
+              <span class="post_category_badge"><?php echo esc_html($category->name); ?></span>
             </figure>
 
             <div class="category_post_content">
@@ -46,12 +59,18 @@
             </div>
           </a>
         </article>
-      <?php endwhile; else : ?>
-        <p>Nenhum post encontrado neste arquivo.</p>
-      <?php endif; ?>
+        <?php endwhile; ?>
+      </div>
     </section>
 
+    <?php
+      wp_reset_postdata();
+      endif;
+    endforeach;
+    ?>
   </section>
 </main>
+
+<?php get_footer(); ?>
 
 <?php get_footer(); ?>

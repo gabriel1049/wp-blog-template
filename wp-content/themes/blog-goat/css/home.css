@@ -117,6 +117,12 @@
   cursor: pointer;
   text-decoration: none;
   color: var(--color-black);
+  transition: 0.9s;
+}
+
+.ver-todos:hover {
+  background-color: var(--color-blue);
+  color: #fff;
 }
 
 /* ================================================
@@ -168,7 +174,6 @@
 
 .img_post > img {
   width: 100%;
-  border-radius: 10px;
   display: block;
 }
 
@@ -191,74 +196,50 @@
 /* ================================================
    FORMULÁRIO LATERAL (NEWSLETTER)
 ================================================ */
-.column_info_hero { 
-  position: sticky;
-  top: 0px;
-}
-.form-container {
-  background-color: #0c2d4a;
-  padding: 30px;
-  border-radius: 10px;
+.card_loja_oficial {
+  background-color: #f2f2f2;
+  padding: 25px;
+  margin-bottom: 30px;
   text-align: center;
-  color: #fff;
-  width: 300px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.form-container h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
+.card_loja_oficial .highlight {
+  color: var(--color-blue);
 }
 
-.form-container .highlight {
-  background-color: #fff;
-  color: #0c2d4a;
-  padding: 2px 6px;
-  border-radius: 3px;
-}
-
-.form-container p {
-  font-size: 14px;
-  color: #ccc;
-  margin-bottom: 20px;
-}
-
-.form-container input[type="email"] {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.subscribe {
-  width: 100%;
-  padding: 12px;
-  background-color: #f86e63;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.subscribe:hover {
-  background-color: #e45d54;
-}
-
-.checkbox-container {
-  display: flex;
-  align-items: center;
+.card_loja_oficial .btn_loja {
   margin-top: 15px;
-  font-size: 12px;
-  color: #ccc;
+  display: inline-block;
+  background-color: var(--color-blue);
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
 }
 
-.checkbox-container input {
-  margin-right: 8px;
+.card_loja_oficial .btn_loja:hover {
+  background-color: #183354;
 }
+
+.social_links_aside {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.social_links_aside a {
+  font-size: 1.4rem;
+  color: var(--color-blue);
+  transition: color 0.3s;
+}
+
+.social_links_aside a:hover {
+  color: #000;
+}
+
 
 
 /* ================================================
@@ -268,6 +249,8 @@
 .h3_principais_postagens {
     margin-top: 20px;
     margin-bottom: 20px;
+    font-size: 1.5em;
+    color: var(--color-blue);
 }
 .card_post_aside {
     display: flex;
@@ -570,72 +553,6 @@
 }
 
 
-
-/* ================================================
-   footer
-================================================ */
-.footer-elegante {
-  background-color: #0e1c2f;
-  color: #ffffff;
-  text-align: center;
-  padding-top: 50px;
-  font-family: 'Manrope', sans-serif;
-}
-
-.footer-elegante .footer-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding-bottom: 40px;
-}
-
-.footer-elegante .footer-logo img {
-  width: 160px;
-  margin: 0 auto 20px;
-}
-
-.footer-elegante .footer-text {
-  font-size: 0.95em;
-  line-height: 1.6em;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  color: #cbd6e2;
-}
-
-.footer-elegante .footer-social {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-}
-.footer-elegante .footer-social a {
-  font-size: 1.3em;
-  color: #ffffff;
-  transition: color 0.3s;
-}
-.footer-elegante .footer-social a:hover {
-  color: #f86e63;
-}
-/* Faixa inferior */
-.footer-elegante .footer-bottom {
-  background-color: #091521;
-  padding: 20px 0;
-  font-size: 0.85em;
-  color: #9caec4;
-}
-/* Responsivo */
-@media (max-width: 600px) {
-  .footer-elegante .footer-text {
-    font-size: 0.9em;
-    padding: 0 20px;
-  }
-
-  .footer-elegante .footer-logo img {
-    width: 130px;
-  }
-
-  .footer-elegante .footer-social {
-    gap: 18px;
-  }
-}
 .sessao_principais_post.horizontal_autoscroll {
   overflow: hidden;
   width: 100%;
