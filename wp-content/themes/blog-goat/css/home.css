@@ -169,11 +169,19 @@
    POST: IMAGEM COM CATEGORIA FIXADA
 ================================================ */
 .img_post {
+  width: 100%;
+  height: 270px; /* Altura fixa desejada */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
-.img_post > img {
+.img_post img {
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha o espaço proporcionalmente */
   display: block;
 }
 
@@ -561,7 +569,7 @@
 .scroll_track {
   display: flex;
   width: max-content;
-  animation: scrollLeft 60s linear infinite;
+  animation: scrollLeft 500s linear infinite;
   gap: 40px;
 }
 @keyframes scrollLeft {
