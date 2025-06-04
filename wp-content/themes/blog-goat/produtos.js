@@ -1,5 +1,5 @@
 async function carregarProdutos() {
-  const response = await fetch('produtos.json');
+  const response = await fetch(`${window.location.origin}/wp-content/themes/blog-goat/produtos.json`);
   let produtos = await response.json();
 
   // Embaralha os produtos aleatoriamente

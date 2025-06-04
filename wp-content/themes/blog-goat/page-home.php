@@ -139,10 +139,11 @@
 </section>
 
 <section class="carousel-wrapper wrapper_margin">
-    <div class="carousel-fade left"></div> <!-- NOVO -->
-    <div class="carousel-fade right"></div> <!-- Já existia -->
-    <div class="carousel-container" id="carousel-container"></div>
+        <div class="carousel-fade left"></div> <!-- NOVO -->
+        <div class="carousel-fade right"></div> <!-- Já existia -->
+        <div class="carousel-container" id="carousel-container"></div>
 </section>
+
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/produtos.js"></script>
 
 <?php get_footer(); ?>
