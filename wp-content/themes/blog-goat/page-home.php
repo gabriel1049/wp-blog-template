@@ -82,7 +82,9 @@
     $args = [
         'post_type'      => 'post',
         'posts_per_page' => 6,
-        'post_status'    => 'publish'
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC'
     ];
 
     $query = new WP_Query($args);
@@ -103,7 +105,10 @@
                     <img src="<?php echo esc_url($imagem); ?>" alt="<?php the_title_attribute(); ?>">
                 </figure>
 
-                <h3><?php the_title(); ?></h3>
+                <h3 class="titulo-resumido">
+  <?php echo esc_html( mb_strimwidth( get_the_title(), 0, 30, '...' ) ); ?>
+</h3>
+
 
                 <div class="tempo_post">
                     <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
@@ -123,6 +128,7 @@
     endif;
     ?>
 </section>
+
 
     </section>
 

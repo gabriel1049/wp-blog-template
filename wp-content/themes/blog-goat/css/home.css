@@ -169,20 +169,20 @@
   margin-top: 25px;
 }
 
-.post {
+.post > a {
   display: flex;
   flex-direction: column;
   gap: 10px;
   cursor: pointer;
 }
 
-.post > h3 {
+.post > a > h3 {
   font-size: 1.3em;
   font-weight: bold;
   color: var(--color-blue);
 }
 
-.post > p {
+.post > a > p {
   font-size: 1em;
   font-weight: 300;
   color: var(--color-blue);
