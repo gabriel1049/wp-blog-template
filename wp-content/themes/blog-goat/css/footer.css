@@ -1,6 +1,6 @@
 .footer-elegante {
-  background-color: #0e1a2b;
-  color: #fff;
+  background-color: #FFEEAD;
+  color: var(--color-blue);
   padding-top: 60px;
   font-family: 'Manrope', sans-serif;
 }
@@ -30,12 +30,12 @@
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 20px;
-  color: #ccc;
+  color: var(--color-blue);
 }
 
 .footer-social a {
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--color-blue);
   margin-right: 15px;
   transition: color 0.3s;
 }
@@ -61,7 +61,7 @@
 }
 
 .footer-categories li a {
-  color: #ccc;
+  color: var(--color-blue);
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s;

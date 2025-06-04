@@ -56,23 +56,23 @@ Tags: responsivo, blog, ecommerce, moderno, customizado
    RESPONSIVIDADE AVANÇADA
 ================================================ */
 
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
   .wrapper_padding,
   .wrapper_margin {
-    padding-left: 100px;
-    padding-right: 100px;
-    margin-left: 100px;
-    margin-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 }
 
 @media (max-width: 1000px) {
   .wrapper_padding,
   .wrapper_margin {
-    padding-left: 60px;
-    padding-right: 60px;
-    margin-left: 60px;
-    margin-right: 60px;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
   }
 }
 

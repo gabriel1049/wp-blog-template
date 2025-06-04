@@ -7,10 +7,6 @@
 <!-- Hero/banner introdutório -->
 <?php get_template_part('template-parts/hero', 'slider'); ?>
 
-
-<!-- Destaques com cards principais -->
-<section class="main_container_homepage wrapper_margin">
-    
 <section class="sessao_principais_post horizontal_autoscroll" aria-label="Postagens em destaque">
   <div class="scroll_track">
     <?php
@@ -45,9 +41,13 @@
     <?php endif; ?>
   </div>
 </section>
+
+
+<!-- Destaques com cards principais -->
+<section class="main_container_homepage wrapper_margin">
     <section class="banner_servico1" aria-label="Banner promocional">
         <figure>
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner_servico1.png" alt="Banner com serviço 1">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner-yopp-servico.png" alt="Banner com serviço 1">
         </figure>
     </section>
 </section>
@@ -89,7 +89,7 @@
                 </figure>
 
                 <h3 class="titulo-resumido">
-  <?php echo esc_html( mb_strimwidth( get_the_title(), 0, 30, '...' ) ); ?>
+  <?php echo esc_html( mb_strimwidth( get_the_title(), 0, 40, '...' ) ); ?>
 </h3>
 
 
@@ -123,11 +123,11 @@
 
 <section class="banner_servico1 wrapper_margin" aria-label="Banner promocional">
     <figure>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner_servico1.png" alt="Banner com serviço 1">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner-yopp-servico2.png" alt="Banner com serviço 1">
     </figure>
 </section>
 
-<section class="carousel-wrapper wrapper_margin">
+<section class="carousel-wrapper">
         <div class="carousel-fade left"></div> <!-- NOVO -->
         <div class="carousel-fade right"></div> <!-- Já existia -->
         <div class="carousel-container" id="carousel-container"></div>

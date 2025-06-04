@@ -48,7 +48,7 @@
 
   <!-- Banner -->
   <div class="div-servico-banner-aside">
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner-servico23.png" alt="Banner lateral">
+    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner-yopp-aside.png" alt="Banner lateral">
   </div>
 
   <!-- Redes sociais -->
