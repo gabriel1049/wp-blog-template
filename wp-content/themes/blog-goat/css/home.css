@@ -1,43 +1,4 @@
 /* ================================================
-   HERO / BANNER DE DESTAQUE
-================================================ */
-.hero_banner {
-  background-image: url('../img/frame-banner.png');
-  background-size: cover;
-  height: 570px;
-  display: flex;
-  justify-content: center;
-}
-
-.hero_banner_text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  text-align: center;
-}
-
-.title_hero_post {
-  background-color: var(--color-white);
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.hero_banner_text > h1 {
-  color: var(--color-white);
-  font-size: 3em;
-  font-weight: 300;
-}
-
-.info_text_banner {
-  display: flex;
-  gap: 20px;
-  font-weight: 200;
-  color: var(--color-white);
-}
-
-/* ================================================
    SESSÃO: POSTS EM DESTAQUE
 ================================================ */
 /* Carrossel com scroll horizontal */
@@ -402,7 +363,7 @@
   padding: 20px;
   transition: transform 0.3s;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(0px);
   transition: all 0.6s ease-out;
 }
 
@@ -567,7 +528,6 @@
     margin-right: 0px;
   }
 }
-
 @media (max-width: 400px) {
   .hero_banner_text > h1 {
     font-size: 1.7em;
@@ -646,17 +606,14 @@
   justify-content: center;
   gap: 25px;
 }
-
 .footer-elegante .footer-social a {
   font-size: 1.3em;
   color: #ffffff;
   transition: color 0.3s;
 }
-
 .footer-elegante .footer-social a:hover {
   color: #f86e63;
 }
-
 /* Faixa inferior */
 .footer-elegante .footer-bottom {
   background-color: #091521;
@@ -664,7 +621,6 @@
   font-size: 0.85em;
   color: #9caec4;
 }
-
 /* Responsivo */
 @media (max-width: 600px) {
   .footer-elegante .footer-text {
@@ -679,4 +635,53 @@
   .footer-elegante .footer-social {
     gap: 18px;
   }
+}
+.sessao_principais_post.horizontal_autoscroll {
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+}
+.scroll_track {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 60s linear infinite;
+  gap: 40px;
+}
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.card_unico_post_section_hero_principal {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 350px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.img_card_section_hero_principal img {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+.info_card_principais_post {
+  padding: 15px;
+}
+.titulo_post_card {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+.data_post {
+  font-size: 0.9rem;
+  color: #777;
 }

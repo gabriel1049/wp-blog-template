@@ -42,3 +42,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Hero slider 
+let currentHero = 0;
+const heroSlides = document.querySelectorAll('.hero_slide');
+const totalHero = heroSlides.length;
+
+function showHeroSlide(index) {
+  const wrapper = document.querySelector('.hero_slider_wrapper');
+  currentHero = index % totalHero;
+  wrapper.style.transform = `translateX(-${currentHero * 100}%)`;
+}
+
+setInterval(() => {
+  showHeroSlide(currentHero + 1);
+}, 7000);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const track = document.querySelector('.scroll_track');
+  if (track) {
+    const clone = track.innerHTML;
+    track.innerHTML += clone; // duplica os posts para looping
+  }
+});

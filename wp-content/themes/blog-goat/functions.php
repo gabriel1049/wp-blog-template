@@ -31,20 +31,7 @@ function estimated_reading_time($content) {
   $minutes = ceil($words / 200); // 200 palavras por minuto
   return $minutes . ' min';
 }
-
-function xml_carrossel_injetar_carrossel() {
-    $json_url = get_stylesheet_directory_uri() . '/produtos.json';
-    $script_url = get_stylesheet_directory_uri() . '/produtos.js';
-
-    ob_start(); // importante para shortcode funcionar
-    ?>
-    <section class="carousel-wrapper wrapper_margin">
-      <div class="carousel-fade left"></div>
-      <div class="carousel-fade right"></div>
-      <div class="carousel-container" id="carousel-container" data-json="<?php echo esc_url($json_url); ?>"></div>
-    </section>
-    <script src="<?php echo esc_url($script_url); ?>"></script>
-    <?php
-    return ob_get_clean();
+function carregar_scripts_hero() {
+  wp_enqueue_script('hero-slider', get_stylesheet_directory_uri() . '/js/hero-slider.js', [], null, true);
 }
-add_shortcode('carrossel_produtos', 'xml_carrossel_injetar_carrossel');
+add_action('wp_enqueue_scripts', 'carregar_scripts_hero');

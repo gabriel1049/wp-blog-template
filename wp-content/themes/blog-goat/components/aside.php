@@ -13,35 +13,56 @@
     </form>
 
     <section class="container_card_aside_home">
-        <h3 class="h3_principais_postagens">Principais Postagens</h3>
+  <h3 class="h3_principais_postagens">Principais Postagens</h3>
 
-        <div class="card_post_aside">
+  <?php
+  $args = [
+    'post_type'      => 'post',
+    'posts_per_page' => 3,
+    'post_status'    => 'publish',
+  ];
+  $aside_query = new WP_Query($args);
 
-            <div class="text_content_post_aside">
-                <span>Categoria</span>
-                <h3>Lorem ipsum dolor sit amet consectetur, adipisicing</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam debitis
-                    quasi repellat excepturi unde consectetur ad maxime quos tenetur quibusdam, quidem neque a
-                    nemo quas.</p>
-                <time datetime="2024-08-27" class="data_post">
-                    <i class="fa-regular fa-calendar"></i> 27 Maio, 2025
-                </time>
-            </div>
-        </div>
+  if ($aside_query->have_posts()):
+    while ($aside_query->have_posts()): $aside_query->the_post();
+  ?>
+  
+  <div class="card_post_aside">
+    <div class="text_content_post_aside">
+      <span>
+        <?php
+        $categories = get_the_category();
+        if (!empty($categories)) {
+          echo esc_html($categories[0]->name);
+        } else {
+          echo 'Sem categoria';
+        }
+        ?>
+      </span>
+      
+      <h3>
+        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+      </h3>
 
-        <div class="card_info_post_aside">
-            <div class="text_content_post_aside">
-                <span>Categoria</span>
-                <h3>Lorem ipsum dolor sit amet consectetur, adipisicing</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam debitis
-                    quasi repellat excepturi unde consectetur ad maxime quos tenetur quibusdam, quidem neque a
-                    nemo quas.</p>
-                <time datetime="2024-08-27" class="data_post">
-                    <i class="fa-regular fa-calendar"></i> 27 Maio, 2025
-                </time>
-            </div>
-        </div>
-    </section>
+      <p>
+        <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+      </p>
+
+      <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="data_post">
+        <i class="fa-regular fa-calendar"></i> <?php echo get_the_date('d \d\e F, Y'); ?>
+      </time>
+    </div>
+  </div>
+
+  <?php
+    endwhile;
+    wp_reset_postdata();
+  else:
+  ?>
+    <p>Sem postagens recentes no momento.</p>
+  <?php endif; ?>
+</section>
+
 
     <div class="div-servico-banner-aside">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner-servico23.png" alt="">

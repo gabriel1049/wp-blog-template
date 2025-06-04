@@ -5,63 +5,46 @@
 <?php get_header(); ?>
 
 <!-- Hero/banner introdutório -->
-<section class="hero_banner wrapper_padding" role="banner">
-    <div class="hero_banner_text">
-        <p class="title_hero_post">Categoria do Post</p>
-        <h1>Título do artigo do blog da GOAT</h1>
-        <div class="info_text_banner">
-            <p><i class="fa-solid fa-calendar"></i> 26 de maio, 2025</p>
-            <p><i class="fa-solid fa-clock"></i> 20 minutos</p>
-        </div>
-    </div>
-</section>
+<?php get_template_part('template-parts/hero', 'slider'); ?>
+
 
 <!-- Destaques com cards principais -->
 <section class="main_container_homepage wrapper_margin">
-    <section class="sessao_principais_post" aria-label="Postagens em destaque">
+    
+<section class="sessao_principais_post horizontal_autoscroll" aria-label="Postagens em destaque">
+  <div class="scroll_track">
+    <?php
+    $args = [
+      'post_type'      => 'post',
+      'posts_per_page' => -1,
+      'post_status'    => 'publish',
+    ];
+    $query = new WP_Query($args);
 
-        <article class="card_unico_post_section_hero_principal">
-            <div class="info_card_principais_post">
-                <h3 class="titulo_post_card">A Comprehensive Checklist For Running</h3>
-                <time datetime="2024-08-27" class="data_post">
-                    <i class="fa-regular fa-calendar"></i> 27 AUGUST, 2024
-                </time>
-            </div>
-
-            <figure class="img_card_section_hero_principal">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post1.png" alt="Imagem do post">
-            </figure>
-        </article>
-
-        <article class="card_unico_post_section_hero_principal">
-            <div class="info_card_principais_post">
-                <h3 class="titulo_post_card">A Comprehensive Checklist For Running</h3>
-                <time datetime="2024-08-27" class="data_post">
-                    <i class="fa-regular fa-calendar"></i> 27 AUGUST, 2024
-                </time>
-            </div>
-
-            <figure class="img_card_section_hero_principal">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/frame-banner.png" alt="Imagem do post">
-            </figure>
-        </article>
-
-        <article class="card_unico_post_section_hero_principal">
-            <div class="info_card_principais_post">
-                <h3 class="titulo_post_card">A Comprehensive Checklist For Running</h3>
-                <time datetime="2024-08-27" class="data_post">
-                    <i class="fa-regular fa-calendar"></i> 27 AUGUST, 2024
-                </time>
-            </div>
-
-            <figure class="img_card_section_hero_principal">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post2.png" alt="Imagem do post">
-            </figure>
-        </article>
-
-
-    </section>
-
+    if ($query->have_posts()):
+      while ($query->have_posts()): $query->the_post();
+    ?>
+    <article class="card_unico_post_section_hero_principal">
+      <figure class="img_card_section_hero_principal">
+        <?php if (has_post_thumbnail()): ?>
+          <?php the_post_thumbnail('medium', ['alt' => get_the_title()]); ?>
+        <?php else: ?>
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/placeholder.png" alt="Imagem padrão do post">
+        <?php endif; ?>
+      </figure>
+      <div class="info_card_principais_post">
+        <h3 class="titulo_post_card"><?php the_title(); ?></h3>
+        <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="data_post">
+          <i class="fa-regular fa-calendar"></i> <?php echo get_the_date('d F, Y'); ?>
+        </time>
+      </div>
+    </article>
+    <?php endwhile; wp_reset_postdata(); ?>
+    <?php else: ?>
+      <p>Não há posts em destaque no momento.</p>
+    <?php endif; ?>
+  </div>
+</section>
     <section class="banner_servico1" aria-label="Banner promocional">
         <figure>
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner_servico1.png" alt="Banner com serviço 1">

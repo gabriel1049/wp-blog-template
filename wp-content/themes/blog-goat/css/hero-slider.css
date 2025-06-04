@@ -1,0 +1,154 @@
+.hero_slider {
+  position: relative;
+  height: 570px;
+  overflow: hidden;
+}
+
+.hero_slides_wrapper {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  height: 100%;
+}
+
+.hero_slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero_content {
+  color: #fff;
+  max-width: 600px;
+}
+
+.categoria_banner {
+  background: #fff;
+  color: #2d2d2f;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-bottom: 12px;
+}
+
+.hero_content h1 {
+  font-size: 2.8em;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin-bottom: 20px;
+}
+
+.info_text_banner {
+  display: flex;
+  gap: 20px;
+  font-weight: 300;
+  font-size: 0.95em;
+  margin-bottom: 25px;
+}
+
+.btn_banner {
+  background: #fff;
+  color: #2d2d2f;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn_banner:hover {
+  background: #f0f0f0;
+}
+
+
+.hero_slider_section {
+  position: relative;
+  height: 570px;
+  overflow: hidden;
+}
+
+.hero_slider_wrapper {
+  display: flex;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.hero_slide {
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero_overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0,0,0,0.2));
+  display: flex;
+  align-items: center;
+}
+
+.hero_slide_content {
+  max-width: 600px;
+  color: #fff;
+  text-align: left;
+}
+
+.hero_category {
+  background-color: #fff;
+  color: #2d2d2f;
+  padding: 6px 12px;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.9em;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.hero_title {
+  font-size: 2.8em;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero_meta {
+  display: flex;
+  gap: 25px;
+  font-weight: 300;
+  margin-bottom: 25px;
+  font-size: 0.95em;
+}
+
+.hero_button {
+  display: inline-block;
+  background: #fff;
+  color: #2d2d2f;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero_button:hover {
+  background: #f2f2f2;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .hero_title {
+    font-size: 1.8em;
+  }
+
+  .hero_slide_content {
+    padding: 0 20px;
+  }
+}
