@@ -48,7 +48,14 @@
 
   <!-- Banner -->
   <div class="div-servico-banner-aside">
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner-yopp-aside.png" alt="Banner lateral">
+    <?php
+            $url = get_option('aside-img');
+            if ($url) {
+                $id = attachment_url_to_postid($url);
+                $alt = get_post_meta($id, '_wp_attachment_image_alt', true);
+                echo '<img src="' . esc_url($url) . '" alt="' . esc_attr($alt) . '">';
+            }
+            ?>
   </div>
 
   <!-- Redes sociais -->

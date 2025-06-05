@@ -25,7 +25,7 @@
 <header class="header_nav_bar wrapper_padding">
   <div class="img_logo_header">
     <a href="<?php echo home_url(); ?>">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="Logo da GOAT">
+      <img src="<?php echo esc_url(get_option('ui_logo_image')); ?>" alt="Logo da GOAT">
     </a>
   </div>
 

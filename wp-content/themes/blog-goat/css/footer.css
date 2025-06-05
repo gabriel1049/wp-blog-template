@@ -1,5 +1,5 @@
 .footer-elegante {
-  background-color: #FFEEAD;
+  background-color: var(--footer-color);
   color: var(--color-blue);
   padding-top: 60px;
   font-family: 'Manrope', sans-serif;

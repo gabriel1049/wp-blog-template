@@ -8,10 +8,9 @@
   height: 100px;
   position: relative;
   z-index: 1000;
-  background-color: #FFEEAD;
+  background-color: var(--header-color);
   margin: 0px !important;
 }
-
 /* NAV DESKTOP */
 .nav_bar {
   display: flex;
@@ -29,7 +28,7 @@
 .nav_bar > ul > li > a {
   text-decoration: none;
   cursor: pointer;
-  color: var(--color-black);
+  color: var(--cor-texto-header);
   font-weight: 600;
   font-size: 1em;
   transition: color 0.3s ease;
