@@ -3,7 +3,7 @@
  * Plugin Name: Custom UI Editor ACF Style
  * Description: UI Editor com campos personalizados, variáveis CSS nomeadas e opção de exclusão.
  * Version: 1.4
- * Author: Seu Nome
+ * Author: Gabriel Barros - GabiGoat
  */
 
 if (!defined('ABSPATH')) exit;

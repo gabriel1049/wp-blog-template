@@ -21,17 +21,15 @@
     <div class="footer-col footer-right">
       <h4 class="footer-title">Categorias do Blog</h4>
       <ul class="footer-categories">
-        <?php
-        $categories = get_categories([
-          'orderby'     => 'name',
-          'order'       => 'ASC',
-          'hide_empty'  => false // mostra até as categorias vazias
-        ]);
+        <!-- Coluna DIREITA -->
+          <?php
+          wp_nav_menu([
+            'theme_location' => 'footer_menu',
+            'menu_class'     => 'footer-categories', // reutiliza sua classe atual
+            'container'      => false,
+          ]);
+          ?>
 
-        foreach ($categories as $category) {
-          echo '<li><a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a></li>';
-        }
-        ?>
       </ul>
 
       <a href="https://sualojaoficial.com.br" target="_blank" class="btn-loja-footer">Acessar Loja Oficial</a>
