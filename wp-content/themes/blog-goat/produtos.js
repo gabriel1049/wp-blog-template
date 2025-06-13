@@ -12,7 +12,7 @@ async function carregarProdutos() {
     });
 
   const container = document.getElementById('carousel-container');
-  container.innerHTML = '';
+  container.innerHTML = '';   
 
   produtos.forEach(produto => {
     const div = document.createElement('div');

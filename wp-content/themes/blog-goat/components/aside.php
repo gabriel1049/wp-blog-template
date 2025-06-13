@@ -48,14 +48,7 @@
 
   <!-- Banner -->
   <div class="div-servico-banner-aside">
-    <?php
-            $url = get_option('aside-img');
-            if ($url) {
-                $id = attachment_url_to_postid($url);
-                $alt = get_post_meta($id, '_wp_attachment_image_alt', true);
-                echo '<img src="' . esc_url($url) . '" alt="' . esc_attr($alt) . '">';
-            }
-            ?>
+    <img src="<?php echo esc_url( get_option( 'css_banner_servico_aside' ) ); ?>" alt="">
   </div>
 
   <!-- Redes sociais -->

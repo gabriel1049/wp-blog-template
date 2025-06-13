@@ -7,6 +7,12 @@
 <!-- Hero/banner introdutório -->
 <?php get_template_part('template-parts/hero', 'slider'); ?>
 
+<?php
+$post_count = wp_count_posts()->publish;
+
+if ($post_count >= 6): // Só exibe se houver mais de 6 posts publicados
+?>
+
 <section class="sessao_principais_post horizontal_autoscroll" aria-label="Postagens em destaque">
     <div class="scroll_track">
         <?php
@@ -43,19 +49,14 @@
     </div>
 </section>
 
+<?php endif; // fecha if post_count > 6 ?>
+
 
 <!-- Destaques com cards principais -->
 <section class="main_container_homepage wrapper_margin">
     <section class="banner_servico1" aria-label="Banner promocional">
         <figure>
-            <?php
-            $url = get_option('imagem-servico1');
-            if ($url) {
-                $id = attachment_url_to_postid($url);
-                $alt = get_post_meta($id, '_wp_attachment_image_alt', true);
-                echo '<img src="' . esc_url($url) . '" alt="' . esc_attr($alt) . '">';
-            }
-            ?>
+            <img src="<?php echo esc_url( get_option( 'css_banner_servico_1' ) ); ?>" alt="">
         </figure>
     </section>
 </section>
@@ -131,14 +132,7 @@
 
 <section class="banner_servico1 wrapper_margin" aria-label="Banner promocional">
     <figure>
-        <?php
-            $url = get_option('imagem-servico2');
-            if ($url) {
-                $id = attachment_url_to_postid($url);
-                $alt = get_post_meta($id, '_wp_attachment_image_alt', true);
-                echo '<img src="' . esc_url($url) . '" alt="' . esc_attr($alt) . '">';
-            }
-            ?>
+        <img src="<?php echo esc_url( get_option( 'css_banner_servico_2' ) ); ?>" alt="">
     </figure>
 </section>
 

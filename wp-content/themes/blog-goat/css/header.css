@@ -5,7 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: auto;
+  max-height: 120px;
   position: relative;
   z-index: 1000;
   background-color: var(--header-color);
@@ -14,6 +15,10 @@
 /* NAV DESKTOP */
 .nav_bar {
   display: flex;
+}
+
+.img_logo_header img {
+  max-width: 100px;
 }
 
 .nav_bar > ul {

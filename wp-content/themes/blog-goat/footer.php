@@ -3,7 +3,7 @@
 
     <!-- Coluna ESQUERDA -->
     <div class="footer-col footer-left">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="Logo" class="footer-logo" />
+      <img src="<?php echo esc_url(get_option('css_footer_logo_image')); ?>" alt="Logo" class="footer-logo" />
 
       <p class="footer-description">
         Conectando marcas ao digital com performance, estratégia e criatividade.
