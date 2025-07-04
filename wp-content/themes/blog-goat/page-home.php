@@ -53,20 +53,20 @@ if ($post_count >= 6): // Só exibe se houver mais de 6 posts publicados
 
 
 <!-- Destaques com cards principais -->
-<section class="main_container_homepage wrapper_margin">
+<!-- <section class="main_container_homepage wrapper_margin">
     <section class="banner_servico1" aria-label="Banner promocional">
         <figure>
             <img src="<?php echo esc_url( get_option( 'css_banner_servico_1' ) ); ?>" alt="">
         </figure>
     </section>
-</section>
+</section> -->
 
 <!-- Conteúdo principal do blog -->
 <main class="container_hero wrapper_margin">
     <section class="container_posts" aria-labelledby="titulo-ultimas-postagens">
         <div class="ultimos_posts_container">
             <h2 id="titulo-ultimas-postagens">Últimas Postagens</h2>
-            <a href="<?php echo home_url('/arquivo'); ?>" class="ver-todos">VER TODOS <i class="fa-regular fa-share-from-square"></i></a>
+            <a href="<?php echo home_url('/arquivo-de-post'); ?>" class="ver-todos">VER TODOS <i class="fa-regular fa-share-from-square"></i></a>
         </div>
 
         <section class="ultimos_posts">
@@ -130,18 +130,18 @@ if ($post_count >= 6): // Só exibe se houver mais de 6 posts publicados
 
 </main>
 
-<section class="banner_servico1 wrapper_margin" aria-label="Banner promocional">
+<!-- <section class="banner_servico1 wrapper_margin" aria-label="Banner promocional">
     <figure>
         <img src="<?php echo esc_url( get_option( 'css_banner_servico_2' ) ); ?>" alt="">
     </figure>
-</section>
+</section> -->
 
-<section class="carousel-wrapper">
-    <div class="carousel-fade left"></div> <!-- NOVO -->
-    <div class="carousel-fade right"></div> <!-- Já existia -->
+<!-- <section class="carousel-wrapper">
+    <div class="carousel-fade left"></div>
+    <div class="carousel-fade right"></div> 
     <div class="carousel-container" id="carousel-container"></div>
 </section>
 
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/produtos.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/produtos.js"></script> -->
 
 <?php get_footer(); ?>

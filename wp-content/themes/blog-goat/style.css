@@ -43,15 +43,26 @@ Tags: responsivo, blog, ecommerce, moderno, customizado
    WRAPPERS GLOBAIS
 ================================================ */
 .wrapper_padding {
-  padding-left: 280px;
-  padding-right: 280px;
+  padding-left: 220px;
+  padding-right: 220px;
 }
 
 .wrapper_margin {
-  margin-left: 280px;
-  margin-right: 280px;
+  margin-left: 220px;
+  margin-right: 220px;
 }
 
+@media (min-width: 1920px) and (max-width: 1920px) and (min-height: 1080px) and (max-height: 1080px) {
+  .wrapper_margin {
+    margin-left: 240px;
+    margin-right: 240px;
+  }
+
+  .wrapper_padding {
+    padding-left: 240px;
+    padding-right: 240px;
+  }
+}
 
 /* ================================================
    RESPONSIVIDADE AVANÇADA

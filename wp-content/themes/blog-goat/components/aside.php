@@ -2,7 +2,7 @@
 
   <!-- Card de redirecionamento para loja -->
   <div class="card_loja_oficial">
-    <h2>Contato com a <span class="highlight">YOPP</span></h2>
+    <h2>Contato com a <span class="highlight">GOAT BLOG</span></h2>
     <p>Acesse a loja oficial para tirar dúvidas ou comprar produtos diretamente.</p>
     <a href="https://sualojaoficial.com.br" target="_blank" class="btn_loja">Ir para a Loja Oficial</a>
   </div>
@@ -46,11 +46,6 @@
     <?php endif; ?>
   </section>
 
-  <!-- Banner -->
-  <div class="div-servico-banner-aside">
-    <img src="<?php echo esc_url( get_option( 'css_banner_servico_aside' ) ); ?>" alt="">
-  </div>
-
   <!-- Redes sociais -->
   <div class="social_links_aside">
     <a href="https://www.instagram.com/seuperfil" target="_blank" aria-label="Instagram">
@@ -60,5 +55,10 @@
       <i class="fa-brands fa-facebook-f"></i>
     </a>
   </div>
+
+  <!-- Banner -->
+  <!-- <div class="div-servico-banner-aside">
+    <img src="<?php echo esc_url( get_option( 'css_banner_servico_aside' ) ); ?>" alt="">
+  </div> -->
 
 </aside>

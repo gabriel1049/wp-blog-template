@@ -189,7 +189,7 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: var(--color-blue);
+  background-color: var(--secondary-text-color);
   color: white;
   padding: 5px 12px;
   font-size: 12px;
@@ -213,13 +213,13 @@
 }
 
 .card_loja_oficial .highlight {
-  color: var(--color-blue);
+  color: var(--secondary-text-color);
 }
 
 .card_loja_oficial .btn_loja {
   margin-top: 15px;
   display: inline-block;
-  background-color: var(--color-blue);
+  background-color: var(--secondary-text-color);
   color: white;
   padding: 12px 20px;
   text-decoration: none;
@@ -240,7 +240,7 @@
 
 .social_links_aside a {
   font-size: 1.4rem;
-  color: var(--color-blue);
+  color: var(--secondary-text-color);
   transition: color 0.3s;
 }
 
@@ -258,7 +258,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 1.5em;
-    color: var(--color-blue);
+    color: var(--secondary-text-color);
 }
 .card_post_aside {
     display: flex;
@@ -283,7 +283,7 @@
     font-size: 0.9em;
     font-weight: 300;
     border-radius: 10px;
-    max-width: 40%;
+    max-width: 80%;
     text-align: center;
 }
 

@@ -1,3 +1,7 @@
+footer {
+  margin-top: 100px;
+}
+
 .footer-elegante {
   background-color: var(--footer-color);
   color: var(--color-blue);
@@ -30,12 +34,12 @@
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 20px;
-  color: var(--primary-color);
+  color: var(--tertiary-text-color);
 }
 
 .footer-social a {
   font-size: 1.2rem;
-  color: var(--primary-color);
+  color: var(--tertiary-text-color);
   margin-right: 15px;
   transition: color 0.3s;
 }
@@ -61,7 +65,7 @@
 }
 
 .footer-categories li a {
-  color: var(--primary-color);
+  color: var(--tertiary-text-color);
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s;
@@ -74,7 +78,7 @@
 .btn-loja-footer {
   display: inline-block;
   background-color: var(--secondary-color);
-  color: var(--primary-color);
+  color: var(--tertiary-text-color);
   padding: 12px 20px;
   border-radius: 6px;
   text-decoration: none;

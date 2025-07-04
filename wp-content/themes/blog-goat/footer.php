@@ -5,10 +5,10 @@
     <div class="footer-col footer-left">
       <img src="<?php echo esc_url(get_option('css_footer_logo_image')); ?>" alt="Logo" class="footer-logo" />
 
-      <p class="footer-description">
+      <!-- <p class="footer-description">
         Conectando marcas ao digital com performance, estratégia e criatividade.
         Transformamos resultados com SEO, conteúdo e mídia inteligente.
-      </p>
+      </p> -->
 
       <div class="footer-social">
         <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>

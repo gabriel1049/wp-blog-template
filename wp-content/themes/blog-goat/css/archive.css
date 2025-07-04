@@ -24,3 +24,11 @@
 .category_post_card:hover {
   transform: translateY(-5px);
 }
+
+.archive_page_container {
+  margin-top: 80px;
+}
+
+.archive_header {
+  margin-bottom: 60px;
+}
